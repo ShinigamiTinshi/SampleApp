@@ -1,15 +1,27 @@
 <!DOCTYPE html>
-<html>
+  <html lang="eng">
   <head>
     <title>SampleApp</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", media: 'all',  "data-turbo-track": "reload" %>
+    <%= javascript_pack_tag 'application', "data-turbo-track": 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+
+
+  <%= render 'include/auth/auth_header'%>
+
+
+    <div class="jumborton vertical-center">
+      <div class="container">
+        <h2 style="color: #B00100;">User Panel</h2>
+        <%= render 'include/main/notification' %>
+        <%= yield %>
+      </div>
+    </div>
   </body>
-</html>
+  </html>
